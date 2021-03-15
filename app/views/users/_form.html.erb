@@ -31,6 +31,11 @@
     <%= form.password_field :password_confirmation %>
   </div>
 
+  <div class="field">
+    <%= form.label :access_level, "Nivel de Accesso" %>
+    <%= form.select :access_level, { user: 'user', admin: 'admin', owner: 'owner' } %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
