@@ -19,11 +19,11 @@
     <div class="container">
       <nav>sistema de caja</nav>
       <main>Main
-        <%= yield %>
+        <%= yield :main_window%>
       </main>
       <div class="sidebar">
         <div class="titulo">Menú principal</div>
-        <%= render "sideBar" %>
+        <%= render "static_pages/sideBar" %>
       </div>
       <footer>Footer</footer>
     </div>  

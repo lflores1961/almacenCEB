@@ -5,7 +5,7 @@
       <ul>
         <li>
           <% opcion[:submenu].each do |subopcion| %>
-            <%= link_to subopcion[:opcion], '#' %>
+            <%= link_to subopcion[:opcion], eval(subopcion[:ruta]) %>
           <% end %>
         </li>
       </ul>

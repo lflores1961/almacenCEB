@@ -34,14 +34,14 @@
 }
 
 nav {
-  background: #a7ffeb;
+  background: #dbf1f1;
   grid-area: nav;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
 }
 
 main {
-  background: #84ffff;
+  background: #dbf1f1;
   grid-area: main;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
@@ -49,7 +49,7 @@ main {
 
 .sidebar {
   z-index: 1;
-  background: #84ffff;
+  background: #dbf1f1;
   grid-area: sidebar;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
@@ -66,7 +66,7 @@ main {
 }
 
 footer {
-  background: #1de9b6;
+  background: #dbf1f1;
   grid-area: footer;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
