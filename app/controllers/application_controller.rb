@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
       },
       {:letrero => "Proveedores", :submenu =>
         [
-          {:opcion => "Indice", :ruta => '#'}
+          {:opcion => "Indice", :ruta => 'suppliers_path'}
         ]
       },
       {:letrero => "Productos", :submenu =>
