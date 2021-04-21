@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
       },
       {:letrero => "Usuarios", :submenu =>
         [
-          {:opcion => "Indice", :ruta => 'users_path'}
+          {:opcion => "Indice", :ruta => 'users_url'}
         ]
       }
     ]

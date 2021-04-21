@@ -7,10 +7,7 @@
     <%= csp_meta_tag %>
     <%= favicon_link_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
-    -->
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
   </head>
@@ -18,9 +15,9 @@
   <body>
     <div class="container">
       <nav>sistema de caja</nav>
-      <main>Main
-        <%= yield :main_window%>
-      </main>
+      <div class="main-w">Main
+        <%= yield %>
+      </div>
       <div class="sidebar">
         <div class="titulo">Menú principal</div>
         <%= render "static_pages/sideBar" %>

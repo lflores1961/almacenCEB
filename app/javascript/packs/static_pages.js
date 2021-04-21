@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  $('.menu li:has(ul)').click(function(e) {
+$(function () {
+  $('.menu li:has(ul)').on("click", function(e) {
     e.preventDefault();
     if ($(this).hasClass('activado')) {
       $(this).removeClass('activado');
@@ -11,4 +11,5 @@ $(document).ready(function () {
       $(this).children('ul').slideDown();
     }
   });
+  
 });

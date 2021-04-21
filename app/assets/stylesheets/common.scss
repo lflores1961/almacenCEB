@@ -21,8 +21,8 @@
   grid-template-rows: 0.2fr 1.5fr 1.2fr 0.4fr;
   grid-template-areas:
      "nav nav nav nav"
-     "sidebar main main main"
-     "sidebar main main main"
+     "sidebar main-w main-w main-w"
+     "sidebar main-w main-w main-w"
      "sidebar footer footer footer";
   grid-gap: 0.2rem;
   font-weight: 800;
@@ -34,22 +34,22 @@
 }
 
 nav {
-  background: #dbf1f1;
+  background: #f7f7f7;
   grid-area: nav;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
 }
 
-main {
-  background: #dbf1f1;
-  grid-area: main;
+.main-w {
+  background: #f7f7f7;
+  grid-area: main-w;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
 }
 
 .sidebar {
   z-index: 1;
-  background: #dbf1f1;
+  background: #f7f7f7;
   grid-area: sidebar;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
