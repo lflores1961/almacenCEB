@@ -11,5 +11,8 @@ $(function () {
       $(this).children('ul').slideDown();
     }
   });
-  
+
+  $(".menu li ul li a").on("click", function (e) {
+    window.location.href = $(this).attr("href");
+  });
 });
