@@ -1,14 +1,18 @@
 <ul class="menu">
   <% @options.each do |opcion| %>
     <li>
-      <%= link_to "#{opcion[:letrero]}<i class='icono derecha fas fa-chevron-down drop-down'></i>".html_safe, '#'%>
-      <ul>
-        <li>
-          <% opcion[:submenu].each do |subopcion| %>
-            <%= link_to subopcion[:opcion], eval(subopcion[:ruta]) %>
-          <% end %>
-        </li>
-      </ul>
+      <% if opcion[:submenu] != [] %>
+        <%= link_to "#{opcion[:letrero]}<i class='icono derecha fas fa-chevron-down drop-down'></i>".html_safe, '#'%>
+        <ul>
+          <li>
+            <% opcion[:submenu].each do |subopcion| %>
+              <%= link_to subopcion[:opcion], eval(subopcion[:ruta]) %>
+            <% end %>
+          </li>
+        </ul>          
+      <% else %>
+        <%= link_to opcion[:letrero], eval(opcion[:macro_ruta]) %>
+      <% end %>
     </li>
   <% end %>
 </ul>

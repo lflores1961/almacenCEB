@@ -17,14 +17,16 @@
       <nav>
         <h1>sistema de Almacén</h1>
       </nav>
-      <div class="main-w">Main
+      <div class="main-w">
         <%= yield %>
       </div>
       <div class="sidebar">
         <div class="titulo">Menú principal</div>
         <%= render "static_pages/sideBar" %>
       </div>
-      <footer>Footer</footer>
+      <footer>
+        <%= yield :footer %>
+      </footer>
     </div>  
   </body>
 </html>

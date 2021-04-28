@@ -1,42 +1,42 @@
 <%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
+  <%= content_for :footer do %>
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+          <% user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div style="padding-top: 50px;padding-bottom: 30px;">
+    <table class="show-table">
+      <tr>
+        <td><%= form.label :name, 'Nombre:' %></td>
+        <td><%= form.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :email %></td>
+        <td><%= form.text_field :email %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :password %></td>
+        <td><%= form.password_field :password %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :password_confirmation, "Confirmación" %></td>
+        <td><%= form.password_field :password_confirmation %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :access_level, "Nivel de Accesso" %></td>
+        <td><%= form.select :access_level, { user: 'user', admin: 'admin', owner: 'owner' } %></td>
+      </tr>
+      <tr>
+        <td  colspan="2" style="text-align: center;"><%= form.submit class: "btn-lg success" %></td>
+      </tr>
+    </table>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation, "Confirmación" %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :access_level, "Nivel de Accesso" %>
-    <%= form.select :access_level, { user: 'user', admin: 'admin', owner: 'owner' } %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

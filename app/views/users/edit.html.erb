@@ -1,6 +1,10 @@
-<h1>Editing User</h1>
+<h1>Modificar datos de Usuario</h1>
 
 <%= render 'form', user: @user %>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
+
+<% content_for :footer do %>
+  <p id="notice"><%= notice %>
+<% end %>

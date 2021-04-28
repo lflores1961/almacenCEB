@@ -1,19 +1,23 @@
-  <p id="notice"><%= notice %></p>
-
-  <p>
-    Nombre:
-    <strong><%= @user.name %></strong>
-  </p>
-
-  <p>
-    Email:
-    <strong><%= @user.email %></strong>
-  </p>
-
-  <p>
-    Nivel:
-    <strong><%= @user.access_level %></strong>
-  </p
+<div style="padding-top: 50px;padding-bottom: 30px;">
+  <table class="show-table">
+    <tr>
+      <td>Nombre:</td>
+      <td><strong><%= @user.name %></strong></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><strong><%= @user.email %></strong></td>
+    </tr>
+    <tr>
+      <td>Nivel:</td>
+      <td><strong><%= @user.access_level %></strong></td>
+    </tr>
+  </table>
+</div>
 
   <%= link_to 'Edit', edit_user_path(@user) %> |
   <%= link_to 'Back', users_path %>
+
+<% content_for :footer do %>
+  <p id="notice"><%= notice %>
+<% end %>

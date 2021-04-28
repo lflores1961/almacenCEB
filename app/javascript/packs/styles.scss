@@ -1,0 +1,135 @@
+nav {
+  padding: 10px;
+}
+
+.btn {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  padding: 4px 9px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.btn-lg {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Green */
+.success {
+  border-color: #4CAF50;
+  color: green;
+}
+
+.success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Blue */
+.info {
+  border-color: #2196F3;
+  color: dodgerblue;
+}
+
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+
+/* Orange */
+.warning {
+  border-color: #ff9800;
+  color: orange;
+}
+
+.warning:hover {
+  background: #ff9800;
+  color: white;
+}
+
+/* Red */
+.danger {
+  border-color: #f44336;
+  color: red;
+}
+
+.danger:hover {
+  background: #f44336;
+  color: white;
+}
+
+/* Gray */
+.default {
+  border-color: #e7e7e7;
+  color: black;
+}
+
+.default:hover {
+  background: #e7e7e7;
+}
+
+// Index division styling
+.index-division {
+  padding: 10px;
+  h1 {
+    padding: 4px;
+  }
+}
+
+// Table's styling
+
+.index-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px rgb(88, 182, 185);
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  thead tr {
+    background-color: #8abee9;
+    color: #ddd;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+}
+
+.show-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px rgb(88, 182, 185);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  th, td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  thead tr {
+    background-color: #8abee9;
+    color: #ddd;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+}
