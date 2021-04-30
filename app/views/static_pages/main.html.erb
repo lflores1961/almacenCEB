@@ -8,6 +8,10 @@
 
 <% content_for :footer do %>
   <div class="center">
-    <h2 style="color:lightgray;">Centro de avisos del sistema</h2>
+    <% if notice %>
+      <p id="notice"><%= notice %></p>
+    <% else %>
+      <h2 style="color:lightgray;">Centro de avisos del sistema</h2>
+    <% end %>
   </div>
 <% end %>
