@@ -21,5 +21,9 @@ module SessionsHelper
     @current_user = nil
   end
   
+  # Returns current user access level
+  def access_level
+    @current_user.access_level
+  end
   
 end
