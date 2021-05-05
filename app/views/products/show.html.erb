@@ -1,44 +1,47 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Code:</strong>
-  <%= @product.code %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @product.brand %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Unit:</strong>
-  <%= @product.unit %>
-</p>
-
-<p>
-  <strong>Package:</strong>
-  <%= @product.package %>
-</p>
-
-<p>
-  <strong>Units per package:</strong>
-  <%= @product.units_per_package %>
-</p>
-
-<p>
-  <strong>Last price:</strong>
-  <%= @product.last_price %>
-</p>
+<div style="padding-top: 50px;padding-bottom: 30px;">
+  <table class="show-table">
+    <tr>
+      <td>Código EAN:</td>
+      <td><strong><%= @product.code %></strong></td>
+    </tr>
+    <tr>
+      <td>Nombre:</td>
+      <td><strong><%= @product.name %></strong></td>
+    </tr>
+    <tr>
+      <td>Marca:</td>
+      <td><strong><%= @product.brand %></strong></td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td><strong><%= @product.description %></strong></td>
+    </tr>
+    <tr>
+      <td>Unidad de medida:</td>
+      <td><strong><%= @product.unit %></strong></td>
+    </tr>
+    <tr>
+      <td>Empaque:</td>
+      <td><strong><%= @product.package %></strong></td>
+    </tr>
+    <tr>
+      <td>Unidades/empaque:</td>
+      <td><strong><%= @product.units_per_package %></strong></td>
+    </tr>
+    <tr>
+      <td>Último precio:</td>
+      <td><strong><%= @product.last_price  %></strong></td>
+    </tr>
+    <tr>
+      <td>Proveedor:</td>
+      <td><strong><%= @product.supplier.name  %></strong></td>
+    </tr>
+  </table>
+</div>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+
+<% content_for :footer do %>
+  <p id="notice"><%= notice %></p>
+<% end %>
