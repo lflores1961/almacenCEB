@@ -1,57 +1,60 @@
 <%= form_with(model: product) do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+  <% content_for :footer do %>
+    <% if product.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(product.errors.count, "error") %> han impedido guardar este registro:</h2>
 
-      <ul>
-        <% product.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
+        <ul>
+          <% product.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
 
-  <div class="field">
-    <%= form.label :code %>
-    <%= form.text_field :code %>
+  <div style="padding-top: 50px;padding-bottom: 30px;">
+    <table class="show-table">
+      <tr>
+        <td>Código 'EAN':</td>
+        <td><%= form.text_field :code %></td>
+      </tr>
+      <tr>
+        <td>Nombre:</td>
+        <td><%= form.text_field :name %></td>
+      </tr>
+      <tr>
+        <td>Marca:</td>
+        <td><%= form.text_field :brand %></td>
+      </tr>
+      <tr>
+        <td>Descripción:</td>
+        <td><%= form.text_area :description %></td>
+      </tr>
+      <tr>
+        <td>Unidad:</td>
+        <td><%= form.select :unit, @unidades, { label: "Unidad de medida" } %></td>
+      </tr>
+      <tr>
+        <td>Empaque:</td>
+        <td><%= form.select :package, @packages, { label: "Tipo de empaque" } %></td>
+      </tr>
+      <tr>
+        <td>Unidades por empaque:</td>
+        <td><%= form.number_field :units_per_package %></td>
+      </tr>
+      <tr>
+        <td>Último precio:</td>
+        <td><%= form.text_field :last_price %></td>
+      </tr>
+      <tr>
+        <td>Último proveedor:</td>
+        <td><%= form.collection_select :supplier_id, @suppliers, :id, :name, { :prompt => "Proveedor sugerido"}%></td>
+      </tr>
+      <tr>
+        <td  colspan="2" style="text-align: center;"><%= form.submit class: "btn-lg success" %></td>
+      </tr>
+    </table>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :brand %>
-    <%= form.text_field :brand %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :unit %>
-    <%= form.text_field :unit %>
-  </div>
-
-  <div class="field">
-    <%= form.label :package %>
-    <%= form.text_field :package %>
-  </div>
-
-  <div class="field">
-    <%= form.label :units_per_package %>
-    <%= form.number_field :units_per_package %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_price %>
-    <%= form.text_field :last_price %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

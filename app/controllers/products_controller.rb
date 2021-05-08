@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_selections, only: %i[ new edit ]
   before_action :options
 
   # GET /products or /products.json
@@ -14,10 +15,12 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+
   end
 
   # GET /products/1/edit
   def edit
+
   end
 
   # POST /products or /products.json
@@ -63,8 +66,16 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
+    # Set up all selections for form
+    def set_selections
+      @unidades = %w{ litro metro pieza rollo }
+      @packages = %w{ caja tarima }
+      @suppliers = Supplier.all
+    end
+    
+
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:code, :name, :brand, :description, :unit, :package, :units_per_package, :last_price)
+      params.require(:product).permit(:code, :name, :brand, :description, :unit, :package, :units_per_package, :last_price, :supplier_id)
     end
 end
