@@ -68,7 +68,7 @@ class ProductsController < ApplicationController
 
     # Set up all selections for form
     def set_selections
-      @unidades = %w{ litro metro pieza rollo }
+      @unidades = %w{ pieza metro rollo litro }
       @packages = %w{ caja tarima }
       @suppliers = Supplier.all
     end

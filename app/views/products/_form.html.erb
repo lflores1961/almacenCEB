@@ -32,7 +32,7 @@
         <td><%= form.text_area :description %></td>
       </tr>
       <tr>
-        <td>Unidad:</td>
+        <td>Unidad de medida:</td>
         <td><%= form.select :unit, @unidades, { label: "Unidad de medida" } %></td>
       </tr>
       <tr>
@@ -52,7 +52,7 @@
         <td><%= form.collection_select :supplier_id, @suppliers, :id, :name, { :prompt => "Proveedor sugerido"}%></td>
       </tr>
       <tr>
-        <td  colspan="2" style="text-align: center;"><%= form.submit class: "btn-lg success" %></td>
+        <td  colspan="2" style="text-align: center;"><%= form.submit "Crear Artículo", class: "btn-lg success" %></td>
       </tr>
     </table>
   </div>

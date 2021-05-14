@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-  has_many :inputs, class_name: "input"
-  has_many :suppliers, through: :inputs
+  has_many :inputs
+  # has_many :suppliers
 end
