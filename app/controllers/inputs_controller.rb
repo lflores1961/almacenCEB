@@ -1,5 +1,6 @@
 class InputsController < ApplicationController
   before_action :set_input, only: %i[ show edit update destroy ]
+  before_action :options
 
   # GET /inputs or /inputs.json
   def index
@@ -13,6 +14,9 @@ class InputsController < ApplicationController
   # GET /inputs/new
   def new
     @input = Input.new
+    @suppliers = Supplier.all
+    @products = Product.all
+    @user = current_user
   end
 
   # GET /inputs/1/edit
@@ -22,7 +26,8 @@ class InputsController < ApplicationController
   # POST /inputs or /inputs.json
   def create
     @input = Input.new(input_params)
-
+    @input.user_id = current_user.id
+    # params[:input][:user_id] = current_user.id
     respond_to do |format|
       if @input.save
         format.html { redirect_to @input, notice: "Input was successfully created." }

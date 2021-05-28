@@ -10,48 +10,50 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :input_date %>
-    <%= form.datetime_select :input_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :invoice %>
-    <%= form.text_field :invoice %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.text_field :quantity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :product_id %>
-    <%= form.text_field :product_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :supplier_id %>
-    <%= form.text_field :supplier_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+   
+  <div style="padding-top: 50px;padding-bottom: 30px;">
+    <table class="show-table">
+      <tr>
+        <td>Proveedor:</td>
+        <td colspan="3"><%= form.collection_select :supplier_id, @suppliers, :id, :name, { :prompt => "Proveedor sugerido"}%></td>
+      </tr>
+      <tr>
+        <td>Factura:</td>
+        <td><%= form.text_field :invoice %></td>
+        <td>Fecha:</td>
+        <td><%= form.date_field :input_date %></td>
+      </tr>
+    </table>
+    <div class="void-space">
+      <br>
+    </div>
+    <table class="index-table">
+      <thead>
+        <tr>
+          <td>Producto</td>
+          <td>Precio Unit.</td>
+          <td>Cantidad</td>
+          <td>Costo</td>
+          <td>Ubicación</td>
+          <td>Acción</td>
+        </tr>
+      </thead>
+      <tbody>
+        <%  %>
+        <tr>
+          <td><%= form.collection_select :product_id, @products, :id, :name, { :prompt => "Producto"}%></td>
+          <td><%= form.text_field :price %></td>
+          <td><%= form.text_field :quantity %></td>
+          <td>costo</td>
+          <td><%= form.text_field :location %></td>
+          <% form.hidden_field :user_id, value: current_user.id %>
+          <td><%= form.submit "Guardar", class: "btn success" %></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    
   </div>
 <% end %>

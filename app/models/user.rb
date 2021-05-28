@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   validates :password, length: { minimum: 8 }
   has_secure_password
-  has_many :inputs
+  # has_many :inputs
 
   # Returns the hash digest of the given string
   def self.digest(string)

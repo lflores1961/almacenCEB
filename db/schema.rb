@@ -23,12 +23,13 @@ ActiveRecord::Schema.define(version: 2021_05_06_001947) do
     t.string "location"
     t.bigint "product_id", null: false
     t.bigint "supplier_id", null: false
-    t.bigint "user_id", null: false
+    # t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_inputs_on_product_id"
     t.index ["supplier_id"], name: "index_inputs_on_supplier_id"
-    t.index ["user_id"], name: "index_inputs_on_user_id"
+    # t.index ["user_id"], name: "index_inputs_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
