@@ -7,7 +7,9 @@
           <ul>
             <li>
               <% opcion[:submenu].each do |subopcion| %>
-                <%= link_to subopcion[:opcion], eval(subopcion[:ruta]) %>
+                <% if subopcion[:nivel] <= current_access_level %>
+                  <%= link_to subopcion[:opcion], eval(subopcion[:ruta]) %>
+                <% end %>
               <% end %>
             </li>
           </ul>          

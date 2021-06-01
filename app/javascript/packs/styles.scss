@@ -150,3 +150,16 @@ nav {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+.col-md-4 {
+  width: 10%;
+  float: left;
+  padding: 5px;
+  border: 1px;
+}
+
+.col-md-8 {
+  width: 70%;
+  float: left;
+  padding: 5px;
+}

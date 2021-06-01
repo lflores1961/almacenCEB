@@ -1,0 +1,8 @@
+<tr>
+  <td><%= input.product.name %></td>
+  <td><%= input.price %></td>
+  <td><%= input.quantity %></td>
+  <td><%= (input.price * input.quantity).round(2)%>
+  <td><%= input.location %></td>
+  <td><%= link_to 'Destroy', input, class: "btn info", method: :delete, data: { confirm: '¿Confirma la eliminación del registro?' } %></td>
+</tr>

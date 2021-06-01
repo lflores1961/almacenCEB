@@ -22,8 +22,15 @@ module SessionsHelper
   end
   
   # Returns current user access level
-  def access_level
-    @current_user.access_level
+  def current_access_level
+    case @current_user.access_level
+    when "user"
+      return 0
+    when "admin"
+      return 1
+    when "owner"
+      return 2
+    end
   end
   
 end

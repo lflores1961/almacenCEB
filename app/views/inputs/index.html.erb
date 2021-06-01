@@ -1,41 +1,21 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Inputs</h1>
+<h1>Registro de entradas al almacén</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Input date</th>
-      <th>Invoice</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Location</th>
-      <th>Product</th>
-      <th>Supplier</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= render 'form', input: @input %>
 
-  <tbody>
+<table class="index-table">
+  <tbody id='input-list'>
     <% @inputs.each do |input| %>
-      <tr>
-        <td><%= input.input_date %></td>
-        <td><%= input.invoice %></td>
-        <td><%= input.price %></td>
-        <td><%= input.quantity %></td>
-        <td><%= input.location %></td>
-        <td><%= input.product_id %></td>
-        <td><%= input.supplier_id %></td>
-        <td><%= input.user_id %></td>
-        <td><%= link_to 'Show', input %></td>
-        <td><%= link_to 'Edit', edit_input_path(input) %></td>
-        <td><%= link_to 'Destroy', input, method: :delete, data: { confirm: '¿Confirma la eliminación del registro?' } %></td>
-      </tr>
+      <%= render 'inputs', input: input %>
     <% end %>
   </tbody>
 </table>
 
+
 <br>
 
 <%= link_to 'New Input', new_input_path %>
+
+<%= content_for :footer do %>
+  <p id="notice"><%= notice %></p>
+<%  end %>

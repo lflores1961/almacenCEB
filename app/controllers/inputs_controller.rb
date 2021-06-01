@@ -5,6 +5,7 @@ class InputsController < ApplicationController
   # GET /inputs or /inputs.json
   def index
     @inputs = Input.all
+    new_input
   end
 
   # GET /inputs/1 or /inputs/1.json
@@ -13,10 +14,8 @@ class InputsController < ApplicationController
 
   # GET /inputs/new
   def new
-    @input = Input.new
-    @suppliers = Supplier.all
-    @products = Product.all
-    @user = current_user
+    new_input
+    @inputs = []
   end
 
   # GET /inputs/1/edit
@@ -25,13 +24,15 @@ class InputsController < ApplicationController
 
   # POST /inputs or /inputs.json
   def create
-    @input = Input.new(input_params)
-    @input.user_id = current_user.id
+    @inputs = Input.all
+    new_input
+    @input.user_id = @user.id
     # params[:input][:user_id] = current_user.id
     respond_to do |format|
       if @input.save
-        format.html { redirect_to @input, notice: "Input was successfully created." }
-        format.json { render :show, status: :created, location: @input }
+        format.js { redirect_to inputs_path, notice: "Se agregó correctamente el artículo."}
+        # format.html { redirect_to @input, notice: "Input was successfully created." }
+        # format.json { render :show, status: :created, location: @input }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @input.errors, status: :unprocessable_entity }
@@ -66,6 +67,18 @@ class InputsController < ApplicationController
     def set_input
       @input = Input.find(params[:id])
     end
+
+    def new_input
+      if action_name == 'create'
+        @input = Input.new(input_params)
+      else
+        @input = Input.new
+      end
+      @suppliers = Supplier.all
+      @products = Product.all
+      @user = current_user
+    end
+    
 
     # Only allow a list of trusted parameters through.
     def input_params
