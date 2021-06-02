@@ -46,6 +46,7 @@ nav {
   grid-area: main-w;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
+  overflow-y: scroll;
 }
 
 .sidebar {
