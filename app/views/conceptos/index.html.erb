@@ -9,9 +9,9 @@
   <table class="index-table">
     <thead>
       <tr>
+        <th>Capítulo</th>
         <th>Clave</th>
         <th>Description</th>
-        <th>Capítulo</th>
         <th class="actions" colspan="3"></th>
       </tr>
     </thead>
@@ -19,9 +19,9 @@
     <tbody>
       <% @conceptos.each do |concepto| %>
         <tr>
+          <td><%= concepto.capitulo.mix_clave_desc %></td>
           <td><%= concepto.clave %></td>
           <td><%= concepto.description %></td>
-          <td><%= concepto.capitulo.clave %>-<%= concepto.capitulo.description %></td>
           <td class="botones"><%= link_to 'Show', concepto, class: "btn info" %></td>
           <td class="botones"><%= link_to 'Edit', edit_concepto_path(concepto), class: "btn info" %></td>
           <td class="botones"><%= link_to 'Destroy', concepto, class: "btn info", method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :partidas
   resources :conceptos
   get     'login'  => 'sessions#new'
   post    'login'  => 'sessions#create'

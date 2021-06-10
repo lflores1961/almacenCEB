@@ -1,16 +1,16 @@
 <div style="padding-top: 50px;padding-bottom: 30px;">
   <table class="show-table">
     <tr>
+      <td>Capítulo:</td>
+      <td><%= @concepto.capitulo.mix_clave_desc %></td>
+    </tr>
+    <tr>
       <td>Clave:</td>
       <td><strong><%= @concepto.clave %></strong></td>
     </tr>
     <tr>
       <td>Descripción:</td>
       <td><strong><%= @concepto.description %></strong></td>
-    </tr>
-    <tr>
-      <td>Capítulo:</td>
-      <td><%= @concepto.capitulo.clave %>-<%= @concepto.capitulo.description %></td>
     </tr>
   </table>
 </div>

@@ -1,0 +1,40 @@
+
+<h1>Partidas</h1>
+
+<div>
+  <%= render "form", partida: @partida %>
+</div>
+
+<div class="index-division">
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>Capítulo</th>
+      <th>Concepto</th>
+      <th>Clave</th>
+      <th>Description</th>
+      <th class="actions" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @partidas.each do |partida| %>
+      <tr>
+        <td><%= partida.concepto.capitulo.mix_clave_desc %></td>
+        <td><%= partida.concepto.mix_clave_desc %></td>
+        <td><%= partida.clave %></td>
+        <td><%= partida.description %></td>
+        <td class="botones"><%= link_to 'Show', partida, class: "btn info"  %></td>
+        <td class="botones"><%= link_to 'Edit', edit_partida_path(partida), class: "btn info"  %></td>
+        <td class="botones"><%= link_to 'Destroy', partida, class: "btn info" , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<% content_for :footer do %>
+  <p id="notice"><%= notice %></p>
+<% end %>
