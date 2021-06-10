@@ -24,9 +24,9 @@
           <td><%= supplier.email %></td>
           <td><%= supplier.address %></td>
           <td><%= supplier.postal_code %></td>
-          <td><%= link_to 'Show', supplier, class: "btn info" %></td>
-          <td><%= link_to 'Edit', edit_supplier_path(supplier), class: "btn info" %></td>
-          <td><%= link_to 'Destroy', supplier, class: "btn info", method: :delete, data: { confirm: '¿Está de acuerdo en eliminar al proveedor?' } %></td>
+          <td class="botones"><%= link_to 'Show', supplier, class: "btn info" %></td>
+          <td class="botones"><%= link_to 'Edit', edit_supplier_path(supplier), class: "btn info" %></td>
+          <td class="botones"><%= link_to 'Destroy', supplier, class: "btn info", method: :delete, data: { confirm: '¿Está de acuerdo en eliminar al proveedor?' } %></td>
         </tr>
       <% end %>
     </tbody>

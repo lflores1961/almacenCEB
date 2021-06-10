@@ -1,0 +1,19 @@
+<div style="padding-top: 50px;padding-bottom: 30px;">
+  <table class="show-table">
+    <tr>
+      <td>Clave:</td>
+      <td><strong><%= @capitulo.clave %></strong></td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td><strong><%= @capitulo.description %></strong></td>
+    </tr>
+  </table>
+</div>
+
+<%= link_to 'Edit', edit_capitulo_path(@capitulo) %> |
+<%= link_to 'Back', capitulos_path %>
+
+<% content_for :footer do %>
+  <p id="notice"><%= notice %></p>
+<% end %>

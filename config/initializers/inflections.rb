@@ -14,3 +14,9 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.plural 'capitulo', 'capitulos'
+  inflect.plural 'concepto', 'conceptos'
+  inflect.plural 'partida', 'partidas'
+end

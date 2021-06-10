@@ -1,0 +1,38 @@
+
+<h1>Capítulos</h1>
+
+<div>
+  <%= render "form", capitulo: @capitulo %>
+</div>
+
+<div class="index-division">
+  <table class="index-table">
+    <thead>
+      <tr>
+        <th>Clave</th>
+        <th>Description</th>
+        <th class="actions" colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @capitulos.each do |capitulo| %>
+        <tr>
+          <td><%= capitulo.clave %></td>
+          <td><%= capitulo.description %></td>
+          <td class="botones"><%= link_to 'Show', capitulo, class: "btn info" %></td>
+          <td class="botones"><%= link_to 'Edit', edit_capitulo_path(capitulo), class: "btn info" %></td>
+          <td class="botones"><%= link_to 'Destroy', capitulo, class: "btn info", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to 'New Capitulo', new_capitulo_path, class: "btn-lg success" %>
+
+<% content_for :footer do %>
+  <p id="notice"><%= notice %></p>
+<% end %>

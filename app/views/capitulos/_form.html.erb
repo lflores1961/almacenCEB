@@ -1,0 +1,30 @@
+<%= form_with(model: capitulo) do |form| %>
+  <% if capitulo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(capitulo.errors.count, "error") %> prohibited this capitulo from being saved:</h2>
+
+      <ul>
+        <% capitulo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div style="padding-top: 50px;padding-bottom: 30px;">
+    <table class="show-table">
+      <tr>
+        <td>Clave:</td>
+        <td><%= form.text_field :clave %></td>
+      </tr>
+      <tr>
+        <td>Descripción:</td>
+        <td><%= form.text_field :description %></td>
+      </tr>
+      <tr>
+        <td class="botones" colspan="2"><%= form.submit "Guardar", class: "btn success" %></td>
+      </tr>
+    </table>
+  </div>
+
+<% end %>

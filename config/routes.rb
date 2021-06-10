@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete  'logout' => 'sessions#destroy'
   root    'static_pages#main'
 
+  resources :capitulos
   resources :inputs
   resources :suppliers
   resources :products

@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
         {:letrero => "Productos", :submenu =>
           [
             {:opcion => "Index", :ruta => 'products_path', :nivel => 1}, 
-            # {:opcion => "Autorización", :ruta => '#'}
+            {:opcion => "Capítulos", :ruta => 'capitulos_path', :nivel => 1}
           ],
           :macro_ruta => '#'
         },

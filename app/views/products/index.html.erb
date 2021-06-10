@@ -28,9 +28,9 @@
           <td><%= product.package %></td>
           <td><%= product.units_per_package %></td>
           <td><%= product.last_price %></td>
-          <td><%= link_to 'Show', product, class: "btn info" %></td>
-          <td><%= link_to 'Edit', edit_product_path(product), class: "btn info" %></td>
-          <td><%= link_to 'Eliminar', product, class: "btn info", method: :delete, data: { confirm: '¿Está de acuerdo en eliminar el producto?' } %></td>
+          <td class="botones"><%= link_to 'Show', product, class: "btn info" %></td>
+          <td class="botones"><%= link_to 'Edit', edit_product_path(product), class: "btn info" %></td>
+          <td class="botones"><%= link_to 'Eliminar', product, class: "btn info", method: :delete, data: { confirm: '¿Está de acuerdo en eliminar el producto?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -39,7 +39,6 @@
   <br>
 
 <%= link_to 'Producto Nuevo', new_product_path, class: "btn-lg success" %>
-
 
 <% content_for :footer do %>
   <p id="notice"><%= notice %></p>

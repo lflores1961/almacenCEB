@@ -16,11 +16,14 @@
 </div>
 
 <% content_for :footer do %>
-  <div class="center">
+  <div class="bottom center">
     <% if notice %>
       <p id="notice"><%= notice %></p>
     <% else %>
       <h2 style="color:lightgray;">Centro de avisos del sistema</h2>
     <% end %>
+  </div>
+  <div class="my-logo">
+    <%= image_tag "logoBNR.png", size: "110x30" %>
   </div>
 <% end %>
