@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :conceptos
   get     'login'  => 'sessions#new'
   post    'login'  => 'sessions#create'
   delete  'logout' => 'sessions#destroy'

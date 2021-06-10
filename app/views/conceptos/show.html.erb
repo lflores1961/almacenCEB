@@ -1,0 +1,23 @@
+<div style="padding-top: 50px;padding-bottom: 30px;">
+  <table class="show-table">
+    <tr>
+      <td>Clave:</td>
+      <td><strong><%= @concepto.clave %></strong></td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td><strong><%= @concepto.description %></strong></td>
+    </tr>
+    <tr>
+      <td>Capítulo:</td>
+      <td><%= @concepto.capitulo.clave %>-<%= @concepto.capitulo.description %></td>
+    </tr>
+  </table>
+</div>
+
+<%= link_to 'Edit', edit_concepto_path(@concepto) %> |
+<%= link_to 'Back', conceptos_path %>
+
+<% content_for :footer do %>
+  <p id="notice"><%= notice %></p>
+<% end %>

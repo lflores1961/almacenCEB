@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_205550) do
+ActiveRecord::Schema.define(version: 2021_06_10_020150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 2021_06_09_205550) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "conceptos", force: :cascade do |t|
+    t.string "clave"
+    t.string "description"
+    t.bigint "capitulo_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["capitulo_id"], name: "index_conceptos_on_capitulo_id"
   end
 
   create_table "inputs", force: :cascade do |t|
@@ -73,6 +82,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_205550) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "conceptos", "capitulos"
   add_foreign_key "inputs", "products"
   add_foreign_key "inputs", "suppliers"
   add_foreign_key "inputs", "users"
