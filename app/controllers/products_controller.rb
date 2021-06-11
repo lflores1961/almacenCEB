@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
-  before_action :set_selections, only: %i[ new edit ]
+  # before_action :set_selections, only: %i[ new edit create ]
   before_action :options
 
   # GET /products or /products.json
@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
-
+    set_selections
   end
 
   # GET /products/1/edit
@@ -26,10 +26,11 @@ class ProductsController < ApplicationController
   # POST /products or /products.json
   def create
     @product = Product.new(product_params)
+    set_selections
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: "Product was successfully created." }
+        format.html { redirect_to products_path, notice: "Se ha creado exitosamente el registro de Producto." }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -71,11 +72,14 @@ class ProductsController < ApplicationController
       @unidades = %w{ pieza metro rollo litro }
       @packages = %w{ caja tarima }
       @suppliers = Supplier.all
+      @capitulos = Capitulo.all
+      @conceptos = Concepto.all
+      @partidas = Partida.all
     end
     
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:code, :name, :brand, :description, :unit, :package, :units_per_package, :last_price, :supplier_id)
+      params.require(:product).permit(:code, :name, :brand, :description, :unit, :package, :units_per_package, :last_price, :supplier_id, :capitulo_id, :concepto_id, :partida_id)
     end
 end

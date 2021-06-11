@@ -20,6 +20,19 @@
         <td><%= form.text_field :code %></td>
       </tr>
       <tr>
+        <td>Capítulo:</td>
+        <td><%= form.collection_select :capitulo_id, @capitulos, :id, :mix_clave_desc, include_blank: true %></td>
+      </tr>
+      <tr>
+        <td>Concepto:</td>
+        <td><%= form.grouped_collection_select :concepto_id, @capitulos, :conceptos, :mix_clave_desc, :id, :mix_clave_desc, include_blank: true %></td>
+      </tr>
+      <tr>
+        <td>Partida:</td>
+        <td><%= form.grouped_collection_select :partida_id, @conceptos, :partidas, :mix_clave_desc, :id, :mix_clave_desc, include_blank: true %></td>
+      </tr>
+
+      <tr>
         <td>Nombre:</td>
         <td><%= form.text_field :name %></td>
       </tr>

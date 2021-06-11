@@ -5,6 +5,18 @@
       <td><strong><%= @product.code %></strong></td>
     </tr>
     <tr>
+      <td>Capítulo:</td>
+      <td><strong><%= Capitulo.find_by(id: @product.capitulo_id).mix_clave_desc %></strong></td>
+    </tr>
+    <tr>
+      <td>Concepto:</td>
+      <td><strong><%= Concepto.find_by(id: @product.concepto_id).mix_clave_desc %></strong></td>
+    </tr>
+    <tr>
+      <td>Partida:</td>
+      <td><strong><%= Partida.find_by(id: @product.partida_id).mix_clave_desc %></strong></td>
+    </tr>
+    <tr>
       <td>Nombre:</td>
       <td><strong><%= @product.name %></strong></td>
     </tr>

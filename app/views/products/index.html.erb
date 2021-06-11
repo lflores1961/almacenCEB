@@ -6,6 +6,9 @@
     <thead>
       <tr>
         <th>Código EAN</th>
+        <th>Capítulo</th>
+        <th>Concepto</th>
+        <th>Partida</th>
         <th>Nombre</th>
         <th>Marca</th>
         <th>Descripción</th>
@@ -21,6 +24,9 @@
       <% @products.each do |product| %>
         <tr>
           <td><%= product.code %></td>
+          <td><%= Capitulo.find_by(id: product.capitulo_id).mix_clave_desc %></td>
+          <td><%= Concepto.find_by(id: product.concepto_id).mix_clave_desc %></td>
+          <td><%= Partida.find_by(id: product.partida_id).mix_clave_desc %></td>
           <td><%= product.name %></td>
           <td><%= product.brand %></td>
           <td><%= product.description %></td>
