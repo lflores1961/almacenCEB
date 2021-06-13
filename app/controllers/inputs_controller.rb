@@ -15,8 +15,14 @@ class InputsController < ApplicationController
   # GET /inputs/new
   def new
     new_input
-    @inputs = []
   end
+
+  # GET /list_inputs
+  def list_inputs
+    @input_list = params[:input] || []
+    new_input
+  end
+  
 
   # GET /inputs/1/edit
   def edit

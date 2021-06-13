@@ -1,4 +1,4 @@
-$(function () {
+$(document).on( "turbolinks:load", function () {
   $('.menu li:has(ul)').on("click", function(e) {
     e.preventDefault();
     if ($(this).hasClass('activado')) {
