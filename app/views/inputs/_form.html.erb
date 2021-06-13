@@ -31,9 +31,7 @@
       <thead>
         <tr>
           <td>Producto</td>
-          <td>Precio Unit.</td>
           <td>Cantidad</td>
-          <td>Costo</td>
           <td>Ubicación</td>
           <td>Acción</td>
         </tr>
@@ -42,9 +40,7 @@
         <%  %>
         <tr>
           <td><%= form.collection_select :product_id, @products, :id, :name, { :prompt => "Producto"}%></td>
-          <td><%= form.text_field :price %></td>
           <td><%= form.text_field :quantity %></td>
-          <td>costo</td>
           <td><%= form.text_field :location %></td>
           <% form.hidden_field :user_id, value: current_user.id %>
           <td><%= form.submit "Guardar", class: "btn success" %></td>

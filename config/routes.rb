@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :capitulos
   resources :inputs
+  get '/list_inputs', to: 'inputs#list_inputs'
   resources :suppliers
   resources :products
   resources :users

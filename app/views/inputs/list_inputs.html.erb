@@ -1,0 +1,17 @@
+<h1>Registro de entradas al almacén</h1>
+
+<%= render 'form', input: @input %>
+
+<table class="index-table">
+  <tbody id='input-list'>
+    <% @input_list.each do |input| %>
+      <%= render 'inputs', input: input %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= content_for :footer do %>
+  <p id="notice"><%= notice %></p>
+<%  end %>

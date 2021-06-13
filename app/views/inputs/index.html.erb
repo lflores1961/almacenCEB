@@ -1,20 +1,37 @@
+<div>
+  <h1>Entradas al almacén</h1>
+</div>
 
-<h1>Registro de entradas al almacén</h1>
-
-<%= render 'form', input: @input %>
-
-<table class="index-table">
-  <tbody id='input-list'>
-    <% @inputs.each do |input| %>
-      <%= render 'inputs', input: input %>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="index-division">
+  <table class="index-table">
+    <thead>
+          <tr>
+            <td>Producto</td>
+            <td>Proveedor</td>
+            <td>Fecha de Entrada</td>
+            <td>Cantidad</td>
+            <td>Ubicación</td>
+            <td>Acción</td>
+          </tr>
+    </thead>
+    <tbody>
+      <% @inputs.each do |input| %>
+        <tr>
+          <td><%= input.product.name %></td>
+          <td><%= input.supplier.name%>
+          <td><%= input.input_date.strftime("%d-%_m-%Y") %></td>
+          <td><%= input.quantity %></td>
+          <td><%= input.location %></td>
+          <td class="botones"><%= link_to 'Destroy', input, class: "btn info", method: :delete, data: { confirm: '¿Confirma la eliminación del registro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
-<%= link_to 'New Input', new_input_path %>
+<%= link_to 'Registrar Entradas', list_inputs_path %>
 
 <%= content_for :footer do %>
   <p id="notice"><%= notice %></p>

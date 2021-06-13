@@ -36,7 +36,7 @@ class InputsController < ApplicationController
     # params[:input][:user_id] = current_user.id
     respond_to do |format|
       if @input.save
-        format.js { redirect_to inputs_path, notice: "Se agregó correctamente el artículo."}
+        format.js
         # format.html { redirect_to @input, notice: "Input was successfully created." }
         # format.json { render :show, status: :created, location: @input }
       else

@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
       @options = [
         {:letrero => "Almacen", :submenu =>
           [
-            {:opcion => "Ingresar artículos", :ruta => 'inputs_path', :nivel => 1},
+            {:opcion => "Ingresar artículos", :ruta => 'list_inputs_path', :nivel => 1},
+            {:opcion => "Indice de Registros de Entradas", :ruta => 'inputs_path', :nivel => 1},
             {:opcion => "Inventario", :ruta => '#', :nivel => 0}, 
             {:opcion => "Salidas", :ruta => '#', :nivel => 0}
           ],
