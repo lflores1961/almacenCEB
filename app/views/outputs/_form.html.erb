@@ -1,27 +1,31 @@
-<%= form_with(model: input, id: "new-input", local: false) do |form| %>
-  <% if input.errors.any? %>
+<%= form_with(model: @output, id: "new-output", local: false) do |form| %>
+  <% if @output.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(input.errors.count, "error") %> prohibited this input from being saved:</h2>
+      <h2><%= pluralize(@output.errors.count, "error") %> prohibited this output from being saved:</h2>
 
       <ul>
-        <% input.errors.each do |error| %>
+        <% @output.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-   
+
   <div class="index-division">
     <table class="show-table">
       <tr>
-        <td>Proveedor:</td>
-        <td colspan="3"><%= form.collection_select :supplier_id, @suppliers, :id, :name, { :prompt => "Proveedor sugerido"}%></td>
+        <td colspan="2">Nombre de quién recibe:</td>
+        <td colspan="2"><%= form.text_field :receiving_person %></td>
       </tr>
       <tr>
-        <td>Factura:</td>
+        <td colspan="2">Área que recibe:</td>
+        <td colspan="2"><%= form.text_field :receiving_area %></td>
+      </tr>
+      <tr>
+        <td>Referencia:</td>
         <td><%= form.text_field :invoice %></td>
         <td>Fecha:</td>
-        <td><%= form.date_field :input_date %></td>
+        <td><%= form.date_field :output_date %></td>
       </tr>
     </table>
     <div class="void-space">
@@ -32,7 +36,6 @@
         <tr>
           <td>Producto</td>
           <td>Cantidad</td>
-          <td>Ubicación</td>
           <td>Acción</td>
         </tr>
       </thead>
@@ -40,7 +43,6 @@
         <tr>
           <td><%= form.collection_select :product_id, @products, :id, :name, { :prompt => "Producto"}%></td>
           <td><%= form.text_field :quantity %></td>
-          <td><%= form.text_field :location %></td>
           <% form.hidden_field :user_id, value: current_user.id %>
           <td><%= form.submit "Guardar", class: "btn success" %></td>
         </tr>

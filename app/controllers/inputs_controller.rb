@@ -5,7 +5,7 @@ class InputsController < ApplicationController
   # GET /inputs or /inputs.json
   def index
     @inputs = Input.all
-    new_input
+    # new_input
   end
 
   # GET /inputs/1 or /inputs/1.json
@@ -30,7 +30,7 @@ class InputsController < ApplicationController
 
   # POST /inputs or /inputs.json
   def create
-    @inputs = Input.all
+    # @inputs = Input.all
     new_input
     @input.user_id = @user.id
     # params[:input][:user_id] = current_user.id

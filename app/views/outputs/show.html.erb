@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Output date:</strong>
+  <%= @output.output_date %>
+</p>
+
+<p>
+  <strong>Invoice:</strong>
+  <%= @output.invoice %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @output.quantity %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @output.price %>
+</p>
+
+<p>
+  <strong>Receiving area:</strong>
+  <%= @output.receiving_area %>
+</p>
+
+<p>
+  <strong>Receiving person:</strong>
+  <%= @output.receiving_person %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @output.product_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @output.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_output_path(@output) %> |
+<%= link_to 'Back', outputs_path %>

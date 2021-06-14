@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :outputs
+  get '/list_outputs', to: 'outputs#list_outputs'
   resources :partidas
   resources :conceptos
   get     'login'  => 'sessions#new'

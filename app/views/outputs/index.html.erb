@@ -1,0 +1,42 @@
+
+<h1>Outputs</h1>
+
+<div class="index-division">
+  <table class="index-table">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Fecha de Salida</th>
+        <th>Referencia</th>
+        <th>Cantidad</th>
+        <th>Area Receptora</th>
+        <th>Receptor</th>
+        <th>Entregó</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @outputs.each do |output| %>
+        <tr>
+          <td><%= output.product.name %></td>
+          <td><%= output.output_date %></td>
+          <td><%= output.invoice %></td>
+          <td><%= output.quantity %></td>
+          <td><%= output.receiving_area %></td>
+          <td><%= output.receiving_person %></td>
+          <td><%= output.user_id %></td>
+          <td class="botones"><%= link_to 'Destroy', output, class: "btn info", method: :delete, data: { confirm: '¿Confirma la eliminación del registro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to 'Registrar Salidas', list_outputs_path, class: "btn-lg success" %>
+
+<% content_for :footer do %>
+  <p id="notice"><%= notice %></p>
+<% end %>

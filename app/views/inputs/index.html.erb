@@ -18,7 +18,7 @@
       <% @inputs.each do |input| %>
         <tr>
           <td><%= input.product.name %></td>
-          <td><%= input.supplier.name%>
+          <td><%= input.product.supplier.name%></td>
           <td><%= input.input_date.strftime("%d-%_m-%Y") %></td>
           <td><%= input.quantity %></td>
           <td><%= input.location %></td>

@@ -1,0 +1,8 @@
+// Render input
+var body = document.getElementById("output-list");
+body.innerHTML = "<%= j render @output %>" + body.innerHTML;
+
+//Clear and Focus input form
+var input = document.getElementById("output_product_id");
+input.value = '';
+input.focus();

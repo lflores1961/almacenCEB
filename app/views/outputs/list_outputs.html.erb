@@ -1,0 +1,17 @@
+<h1>Registro de salidas de almacén</h1>
+
+<%= render 'form', input: @output %>
+
+<table class="index-table">
+  <tbody id='output-list'>
+    <% @output_list.each do |output| %>
+      <%= render 'outputs', output: output %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= content_for :footer do %>
+  <p id="notice"><%= notice %></p>
+<%  end %>

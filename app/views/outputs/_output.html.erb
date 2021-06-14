@@ -1,0 +1,12 @@
+<tr>
+  <td><%= output.product.name %></td>
+  <td><%= output.output_date.strftime("%d-%m-%Y") %></td>
+  <td><%= output.invoice %></td>
+  <td><%= output.quantity %></td>
+  <td><%= output.price %></td>
+  <td><%= output.receiving_area %></td>
+  <td><%= output.receiving_person %></td>
+  
+  <td><%= User.find(output.user_id).name %></td>
+  <td class="botones"><%= link_to 'Destroy', output, class: "btn info", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

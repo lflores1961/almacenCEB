@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  output_date: 2021-06-13
+  invoice: MyString
+  quantity: 9.99
+  price: 9.99
+  receiving_area: MyString
+  receiving_person: MyString
+  product: one
+  user: one
+
+two:
+  output_date: 2021-06-13
+  invoice: MyString
+  quantity: 9.99
+  price: 9.99
+  receiving_area: MyString
+  receiving_person: MyString
+  product: two
+  user: two
