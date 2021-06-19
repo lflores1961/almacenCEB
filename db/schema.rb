@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_14_015153) do
+ActiveRecord::Schema.define(version: 2021_06_15_034532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(version: 2021_06_14_015153) do
     t.bigint "capitulo_id", null: false
     t.bigint "concepto_id", null: false
     t.bigint "partida_id", null: false
+    t.decimal "stock"
+    t.decimal "minimum"
     t.index ["capitulo_id"], name: "index_products_on_capitulo_id"
     t.index ["concepto_id"], name: "index_products_on_concepto_id"
     t.index ["partida_id"], name: "index_products_on_partida_id"

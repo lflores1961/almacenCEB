@@ -1,5 +1,5 @@
 class Supplier < ApplicationRecord
-  has_many :inputs
-  has_many :products
+  has_many :inputs, dependent: :destroy
+  has_many :products, dependent: :destroy
   # has_many :products, through: :inputs
 end
