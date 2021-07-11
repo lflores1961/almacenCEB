@@ -10,6 +10,7 @@ import "channels"
 import "jquery"
 import "packs/static_pages"
 import "packs/sibisep"
+import "packs/search"
 import "packs/styles.scss"
 
 Rails.start()

@@ -36,6 +36,7 @@ class InputsController < ApplicationController
     # params[:input][:user_id] = current_user.id
     respond_to do |format|
       if @input.save
+        @product.add_to_stock(@input.quantity)
         format.js
         # format.html { redirect_to @input, notice: "Input was successfully created." }
         # format.json { render :show, status: :created, location: @input }
@@ -77,11 +78,13 @@ class InputsController < ApplicationController
     def new_input
       if action_name == 'create'
         @input = Input.new(input_params)
+        @product = Product.find_by(id: @input.product_id)
       else
         @input = Input.new
+        @products = Product.all
       end
       @suppliers = Supplier.all
-      @products = Product.all
+     
       @user = current_user
     end
     

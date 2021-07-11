@@ -30,7 +30,7 @@ class OutputsController < ApplicationController
   def create
     new_output
     @output.user_id = @user.id
-
+    
     respond_to do |format|
       if @output.save
         format.js
@@ -65,11 +65,13 @@ class OutputsController < ApplicationController
     def new_output
       if action_name == 'create'
         @output = Output.new(output_params)
+        @product = Product.find_by(id: @output.product_id)
       else
         @output = Output.new
+        @products = Product.all
       end
       @suppliers = Supplier.all
-      @products = Product.all
+      
       @user = current_user
     end
 

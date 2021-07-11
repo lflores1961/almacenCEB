@@ -25,7 +25,7 @@
           <td><%= output.quantity %></td>
           <td><%= output.receiving_area %></td>
           <td><%= output.receiving_person %></td>
-          <td><%= output.user_id %></td>
+          <td><%= User.find(output.user_id).name %></td>
           <td class="botones"><%= link_to 'Destroy', output, class: "btn info", method: :delete, data: { confirm: '¿Confirma la eliminación del registro?' } %></td>
         </tr>
       <% end %>

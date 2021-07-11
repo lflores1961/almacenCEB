@@ -70,7 +70,7 @@ class ProductsController < ApplicationController
     # Set up all selections for form
     def set_selections
       @unidades = %w{ pieza metro rollo litro }
-      @packages = %w{ caja tarima }
+      @packages = %w{ caja tarima paquete bolsa }
       @suppliers = Supplier.all
       @capitulos = Capitulo.all
       @conceptos = Concepto.all
@@ -80,6 +80,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:code, :name, :brand, :description, :unit, :package, :units_per_package, :last_price, :supplier_id, :capitulo_id, :concepto_id, :partida_id)
+      params.require(:product).permit(:code, :name, :brand, :description, :unit, :package, :units_per_package, :last_price, :supplier_id, :capitulo_id, :concepto_id, :partida_id, :stock, :minimum)
     end
 end

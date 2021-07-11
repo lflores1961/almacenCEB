@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :searches
   resources :outputs
   get '/list_outputs', to: 'outputs#list_outputs'
   resources :partidas

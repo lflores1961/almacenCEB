@@ -1,0 +1,115 @@
+<h1>Inventario</h1>
+
+<% if @search.search_products %>
+  <div class="show-division">
+    <table class="show-table">
+      <tr>
+        <td>Código:</td>
+        <% if !@search.code.blank? %>
+          <td><%= @search.code %></td>
+        <% else %>
+          <td>Indefinido</td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Producto:</td>
+        <% if !@search.name.blank? %>
+          <td><%= @search.name %>
+        <% else %>
+          <td>Indefinido</td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Marca:</td>
+        <% if !@search.brand.blank? %>
+          <td><%= @search.brand %>
+        <% else %>
+          <td>Indefinido</td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Proveedor:</td>
+        <% if !@search.supplier_id.blank? %>
+          <td><%= Supplier.find(@search.supplier_id.to_i).name %>
+        <% else %>
+          <td>Indefinido</td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Capítulo:</td>
+        <% if !@search.capitulo_id.blank? %>
+          <td><%= Capitulo.find(@search.capitulo_id.to_i).mix_clave_desc %>
+        <% else %>
+          <td>Indefinido</td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Concepto:</td>
+        <% if !@search.concepto_id.blank? %>
+          <td><%= Concepto.find(@search.concepto_id.to_i).mix_clave_desc %>
+        <% else %>
+          <td>Indefinido</td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Partida:</td>
+        <% if !@search.partida_id.blank? %>
+          <td><%= Partida.find(@search.partida_id.to_i).mix_clave_desc %>
+        <% else %>
+          <td>Indefinido</td>
+        <% end %>
+      </tr>
+    </table>
+  </div>
+  <div class="index-division">
+    <table class="index-table">
+      <thead>
+        <tr>
+          <th>Código EAN</th>
+          <th>Capítulo</th>
+          <th>Concepto</th>
+          <th>Partida</th>
+          <th>Nombre</th>
+          <th>Marca</th>
+          <th>Descripción</th>
+          <th>Unidad</th>
+          <th>Empaque</th>
+          <th>Unidades / paquete</th>
+          <th>Último precio</th>
+          <th>En Stock</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @search.search_products.each do |product| %>
+          <tr>
+            <td><%= product.code %></td>
+            <td><%= Capitulo.find_by(id: product.capitulo_id).mix_clave_desc %></td>
+            <td><%= Concepto.find_by(id: product.concepto_id).mix_clave_desc %></td>
+            <td><%= Partida.find_by(id: product.partida_id).mix_clave_desc %></td>
+            <td><%= product.name %></td>
+            <td><%= product.brand %></td>
+            <td><%= product.description %></td>
+            <td><%= product.unit %></td>
+            <td><%= product.package %></td>
+            <td><%= product.units_per_package %></td>
+            <td><%= product.last_price %></td>
+            <td><%= product.stock %></td>
+            <td class="botones"><%= link_to 'Show', product, class: "btn info" %></td>
+            <td class="botones"><%= link_to 'Edit', edit_product_path(product), class: "btn info" %></td>
+            <td class="botones"><%= link_to 'Eliminar', product, class: "btn info", method: :delete, data: { confirm: '¿Está de acuerdo en eliminar el producto?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <div class="index-division">
+    <p>No se encontraron productos con el criterio dado</p>
+  </div>
+<% end %>
+
+<% content_for :footer do %>
+  <p id="notice"><%= notice %></p>
+<% end %>
