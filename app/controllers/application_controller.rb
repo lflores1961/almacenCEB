@@ -15,13 +15,13 @@ class ApplicationController < ActionController::Base
         },
         {:letrero => "Inventario", :submenu =>
           [
-            # {:opcion => "Entradas Por Fecha", :ruta => '#', :nivel => 1},
-            # {:opcion => "Inventario por Área", :ruta => '#', :nivel => 1},
-            # {:opcion => "Por Usuario", :ruta => '#', :nivel => 1}, 
-            # {:opcion => "Por Capítulo", :ruta => '#', :nivel => 1},
-            # {:opcion => "Por Concepto", :ruta => '#', :nivel => 1},
-            # {:opcion => "Por Partida", :ruta => '#', :nivel => 1},
-            # {:opcion => "Stock de Exixtencias", :ruta => '#', :nivel => 1}
+            {:opcion => "Entradas Por Fecha", :ruta => '#', :nivel => 1},
+            {:opcion => "Inventario por Área", :ruta => '#', :nivel => 1},
+            {:opcion => "Por Usuario", :ruta => '#', :nivel => 1}, 
+            {:opcion => "Por Capítulo", :ruta => '#', :nivel => 1},
+            {:opcion => "Por Concepto", :ruta => '#', :nivel => 1},
+            {:opcion => "Por Partida", :ruta => '#', :nivel => 1},
+            {:opcion => "Stock de Exixtencias", :ruta => '#', :nivel => 1}
           ],
           :macro_ruta => 'new_search_path'
         },

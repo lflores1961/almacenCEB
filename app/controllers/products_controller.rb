@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-
+    set_selections
   end
 
   # POST /products or /products.json

@@ -16,6 +16,10 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.xls
+    end
   end
 
   private

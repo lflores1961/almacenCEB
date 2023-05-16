@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Inventario">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Código EAN</Data></Cell>
+        <Cell><Data ss:Type="String">Capítulo</Data></Cell>
+        <Cell><Data ss:Type="String">Concepto</Data></Cell>
+        <Cell><Data ss:Type="String">Partida</Data></Cell>
+        <Cell><Data ss:Type="String">Nombre</Data></Cell>
+        <Cell><Data ss:Type="String">Marca</Data></Cell>
+        <Cell><Data ss:Type="String">Descripción</Data></Cell>
+        <Cell><Data ss:Type="String">Unidad</Data></Cell>
+        <Cell><Data ss:Type="String">Empaque</Data></Cell>
+        <Cell><Data ss:Type="String">Unidades / paquete</Data></Cell>
+        <Cell><Data ss:Type="String">Último precio</Data></Cell>
+        <Cell><Data ss:Type="String">En Stock</Data></Cell>
+        <th colspan="3"></Data></Cell>
+      </Row>
+      <% @search.search_products.each do |product| %>
+        <Row>
+          <Cell><Data ss:Type="String"><%= product.code %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= Capitulo.find_by(id: product.capitulo_id).mix_clave_desc %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= Concepto.find_by(id: product.concepto_id).mix_clave_desc %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= Partida.find_by(id: product.partida_id).mix_clave_desc %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= product.name %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= product.brand %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= product.description %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= product.unit %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= product.package %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= product.units_per_package %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= product.last_price %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= product.stock %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= link_to 'Show', product, class: "btn info" %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= link_to 'Edit', edit_product_path(product), class: "btn info" %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= link_to 'Eliminar', product, class: "btn info", method: :delete, data: { confirm: '¿Está de acuerdo en eliminar el producto?' } %></Data></Cell>
+        </Row>
+      <% end %>
+    </Table>
