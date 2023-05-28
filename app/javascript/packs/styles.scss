@@ -27,7 +27,7 @@
   grid-gap: 0.2rem;
   font-weight: 800;
   // text-transform: uppercase;
-  font-size: 12px;
+  font-size: 10px;
   // color: #004d40;
   background: #cedddd;
   text-align: center;
@@ -47,6 +47,7 @@ nav {
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
   overflow-y: scroll;
+  font-size: 10px;
 }
 
 .sidebar {
